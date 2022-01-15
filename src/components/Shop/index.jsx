@@ -32,14 +32,44 @@ export default function Shop() {
   };
 
   const removeFromBasket = (id) => {
-    const changedOrder = order.filter( item => item.id !== id )
+    const changedOrder = order.filter((item) => item.id !== id);
 
     setOrder(changedOrder);
-  }
+  };
+
+  const incQuantity = (itemId) => {
+    const newOrder = order.map((orderItem) => {
+      if (orderItem.id === itemId) {
+        return {
+          ...orderItem,
+          quanity: orderItem.quanity + 1,
+        };
+      } else {
+        return orderItem;
+      }
+    });
+
+    setOrder(newOrder);
+  };
+
+  const decQuantity = (itemId) => {
+    const newOrder = order.map((orderItem) => {
+      if (orderItem.id === itemId && orderItem.quanity > 1) {
+        return {
+          ...orderItem,
+          quanity: orderItem.quanity - 1,
+        };
+      } else {
+        return orderItem;
+      }
+    });
+
+    setOrder(newOrder);
+  };
 
   const handleBasketShow = () => {
-    setBasketShow(!isBasketShow)
-  }
+    setBasketShow(!isBasketShow);
+  };
 
   useEffect(function getGoods() {
     fetch(API_URL, {
@@ -67,6 +97,8 @@ export default function Shop() {
           order={order}
           handleBasketShow={handleBasketShow}
           removeFromBasket={removeFromBasket}
+          incQuantity={incQuantity}
+          decQuantity={decQuantity}
         />
       )}
     </main>

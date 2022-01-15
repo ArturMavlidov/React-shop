@@ -7,3 +7,9 @@
   right: 0.5rem;
   cursor: pointer;
 }
+
+.basket-btn {
+  vertical-align: middle;
+  cursor: pointer;
+  color: #26a69a;
+}

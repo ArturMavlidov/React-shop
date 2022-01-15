@@ -8,13 +8,13 @@ export default function BasketList(props) {
     order = [],
     handleBasketShow = Function.prototype,
     removeFromBasket = Function.prototype,
+    incQuantity = Function.prototype,
+    decQuantity = Function.prototype,
   } = props;
 
   const totalPrice = order.reduce((acc, prev) => {
     return prev.price * prev.quanity + acc;
   }, 0);
-
-  console.log(totalPrice);
 
   return (
     <ul className="collection basket-list">
@@ -26,6 +26,8 @@ export default function BasketList(props) {
               key={item.id}
               {...item}
               removeFromBasket={removeFromBasket}
+              incQuantity={incQuantity}
+              decQuantity={decQuantity}
             />
           );
         })
@@ -34,6 +36,9 @@ export default function BasketList(props) {
       )}
       <li className="collection-item active">
         Общая стоимость: {totalPrice} руб.
+        <button className="secondary-content btn--small  teal lighten-1 btn-order">
+          Оформить
+        </button>
       </li>
       <i className="material-icons basket-close" onClick={handleBasketShow}>
         close
