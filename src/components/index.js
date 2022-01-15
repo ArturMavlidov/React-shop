@@ -7,6 +7,7 @@ import GoodsItem from './GoodsItem';
 import Cart from './Cart';
 import BasketList from './BasketList';
 import BasketItem from './BasketItem';
+import Alert from './Alert';
 
 export {
   Header,
@@ -17,5 +18,6 @@ export {
   GoodsItem,
   Cart,
   BasketList,
-  BasketItem
+  BasketItem,
+  Alert
 };
