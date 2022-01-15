@@ -1,9 +1,12 @@
+import { Header, Footer, Shop } from './components'
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <>
+      <Header/>
+      <Shop/>
+      <Footer/>
+    </>
   );
 }
 
