@@ -4,6 +4,9 @@ import Shop from './Shop';
 import Preloader from './Preloader';
 import GoodsList from './GoodsList';
 import GoodsItem from './GoodsItem';
+import Cart from './Cart';
+import BasketList from './BasketList';
+import BasketItem from './BasketItem';
 
 export {
   Header,
@@ -11,5 +14,8 @@ export {
   Shop,
   Preloader,
   GoodsList,
-  GoodsItem
-}
+  GoodsItem,
+  Cart,
+  BasketList,
+  BasketItem
+};

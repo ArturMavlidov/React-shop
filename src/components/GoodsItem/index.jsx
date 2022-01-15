@@ -7,9 +7,8 @@ export default function GoodsItem(props) {
     mainId: id,
     displayName: name,
     displayDescription: description,
+    addToBasket = Function.prototype,
   } = props;
-
-  console.log(name);
 
   const { finalPrice: price } = props.price;
   const { full_background: background } = props.displayAssets[0];
@@ -24,8 +23,21 @@ export default function GoodsItem(props) {
         <p>{description || "Описания пока что нет"}</p>
       </div>
       <div className="card-action">
-        <button className="btn">Купить</button>
-        <span className="right" style={{fontSize: '1.8rem'}}>{price} руб.</span>
+        <button
+          className="btn"
+          onClick={() =>
+            addToBasket({
+              id,
+              name,
+              price,
+            })
+          }
+        >
+          Купить
+        </button>
+        <span className="right" style={{ fontSize: "1.8rem" }}>
+          {price} руб.
+        </span>
       </div>
     </div>
   );
