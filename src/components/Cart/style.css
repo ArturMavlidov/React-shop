@@ -1,4 +1,8 @@
 .cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding: 1rem;
   position: fixed;
   bottom: 2rem;
@@ -16,6 +20,5 @@
   }
 }
 
-.cart-quanity {
-
+.cart-quantity {
 }

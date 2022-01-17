@@ -3,7 +3,7 @@ import { GoodsItem } from "../index";
 
 import './style.css'
 
-export default function GoodsList({ goods = [], addToBasket = Function.prototype }) {
+export default function GoodsList({ goods = [] }) {
   if (!goods.length) {
     return <h3>Nothing here</h3>;
   }
@@ -12,7 +12,7 @@ export default function GoodsList({ goods = [], addToBasket = Function.prototype
     <div className="goods">
       {goods.map((item) => {
         return (
-          <GoodsItem key={item.mainId} {...item} addToBasket={addToBasket} />
+          <GoodsItem key={item.mainId} {...item} />
         );
       })}
     </div>

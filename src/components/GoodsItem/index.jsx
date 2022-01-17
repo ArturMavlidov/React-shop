@@ -1,4 +1,6 @@
-import React from "react";
+import { useContext } from "react";
+
+import { ShopContext } from '../../context'
 
 import "./style.css";
 
@@ -7,8 +9,9 @@ export default function GoodsItem(props) {
     mainId: id,
     displayName: name,
     displayDescription: description,
-    addToBasket = Function.prototype,
   } = props;
+
+  const { addToBasket } = useContext(ShopContext)
 
   const { finalPrice: price } = props.price;
   const { full_background: background } = props.displayAssets[0];
