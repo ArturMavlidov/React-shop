@@ -1,15 +1,16 @@
-import { useContext } from "react";
+import React, { useContext, memo } from "react";
 
 import { ShopContext } from '../../context'
 
 import "./style.css";
 
-export default function GoodsItem(props) {
+export default memo(function GoodsItem(props) {
   const {
     mainId: id,
     displayName: name,
     displayDescription: description,
   } = props;
+
 
   const { addToBasket } = useContext(ShopContext)
 
@@ -48,4 +49,4 @@ export default function GoodsItem(props) {
       </div>
     </div>
   );
-}
+});

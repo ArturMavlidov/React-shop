@@ -3,7 +3,7 @@ import { GoodsItem } from "../index";
 
 import './style.css'
 
-export default function GoodsList({ goods = [] }) {
+export default React.memo(function GoodsList({ goods = [] }) {
   if (!goods.length) {
     return <h3>Nothing here</h3>;
   }
@@ -17,4 +17,5 @@ export default function GoodsList({ goods = [] }) {
       })}
     </div>
   );
-}
+});
+
